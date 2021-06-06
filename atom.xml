@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lojunX.github.io/"/>
-  <updated>2021-05-01T10:00:00.000Z</updated>
+  <updated>2021-06-06T01:49:04.456Z</updated>
   <id>https://lojunX.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>身陷囹圄的那些事</title>
-    <link href="https://lojunX.github.io/2021/06/09/detection_life/"/>
-    <id>https://lojunX.github.io/2021/06/09/detection_life/</id>
-    <published>2021-06-08T16:00:00.000Z</published>
-    <updated>2021-05-01T10:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如果触犯了刑法，首先是送往看守所羁押，等判决下来了，才能去监狱，如果案子比较复杂或者其它原因迟迟不开庭判决就难去，而我硬是在看守所足足把刑期坐完了。<br>看守所有很多限制，长期坐下去真的让人精神崩溃。<br>在深圳宝安看守所文化人比较少，故大部分人是无法理解我的心情，他们本身不喜欢学习，不知道知识能改变命运。或者有的是大老板自然也瞧不上我这种喜欢背这些东西的人。</p><h3 id="我怎么进去的？"><a href="#我怎么进去的？" class="headerlink" title="我怎么进去的？"></a>我怎么进去的？</h3><p>我2019年10月21日-2021年4月20日失去自由。<br>我的罪名《提供侵入、非法控制计算机信息系统程序、工具》<br>因为我接了单做美团众包的g,但是这个挂我答应做但是不答应过检测，实际上鲁班七号只卖了10几个，而后面把源代码给他了，他把这东西给别人二次开发起名软件叫xxx，卖了几百个。<br>后面我又给他做了一个now直播插件，但是也只卖了10多个。<br>我总共收取了他1万2。</p><p>其它的不说的好，比如看守所的环境，需要了解的找我。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;如果触犯了刑法，首先是送往看守所羁押，等判决下来了，才能去监狱，如果案子比较复杂或者其它原因迟迟不开庭判决就难去，而我硬是在看守所足足把刑期坐完了。&lt;br&gt;看守所有很多限制，长期坐下去真的让人精神崩溃。&lt;br&gt;在深圳宝安看守所文化人比较少，故大部分人是无法理解我的心情，他们
-      
-    
-    </summary>
-    
-      <category term="Blog" scheme="https://lojunX.github.io/categories/Blog/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>神之手和hooui结合使用乃低门槛逆向神器</title>
@@ -84,11 +61,34 @@
   </entry>
   
   <entry>
+    <title>身陷囹圄的那些事</title>
+    <link href="https://lojunX.github.io/2021/05/09/detection_life/"/>
+    <id>https://lojunX.github.io/2021/05/09/detection_life/</id>
+    <published>2021-05-08T16:00:00.000Z</published>
+    <updated>2021-05-01T10:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果触犯了刑法，首先是送往看守所羁押，等判决下来了，才能去监狱，如果案子比较复杂或者其它原因迟迟不开庭判决就难去，而我硬是在看守所足足把刑期坐完了。<br>看守所有很多限制，长期坐下去真的让人精神崩溃。<br>在深圳宝安看守所文化人比较少，故大部分人是无法理解我的心情，他们本身不喜欢学习，不知道知识能改变命运。或者有的是大老板自然也瞧不上我这种喜欢背这些东西的人。</p><h3 id="我怎么进去的？"><a href="#我怎么进去的？" class="headerlink" title="我怎么进去的？"></a>我怎么进去的？</h3><p>我2019年10月21日-2021年4月20日失去自由。<br>我的罪名《提供侵入、非法控制计算机信息系统程序、工具》<br>因为我接了单做美团众包的g,但是这个挂我答应做但是不答应过检测，实际上鲁班七号只卖了10几个，而后面把源代码给他了，他把这东西给别人二次开发起名软件叫xxx，卖了几百个。<br>后面我又给他做了一个now直播插件，但是也只卖了10多个。<br>我总共收取了他1万2。</p><p>其它的不说的好，比如看守所的环境，需要了解的找我。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;如果触犯了刑法，首先是送往看守所羁押，等判决下来了，才能去监狱，如果案子比较复杂或者其它原因迟迟不开庭判决就难去，而我硬是在看守所足足把刑期坐完了。&lt;br&gt;看守所有很多限制，长期坐下去真的让人精神崩溃。&lt;br&gt;在深圳宝安看守所文化人比较少，故大部分人是无法理解我的心情，他们
+      
+    
+    </summary>
+    
+      <category term="Blog" scheme="https://lojunX.github.io/categories/Blog/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="https://lojunX.github.io/2021/05/06/%E6%83%85%E8%BF%81%E4%BA%A7%E5%93%81%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/"/>
     <id>https://lojunX.github.io/2021/05/06/情迁产品下载地址/</id>
     <published>2021-05-06T14:19:54.352Z</published>
-    <updated>2021-06-06T01:49:30.713Z</updated>
+    <updated>2021-06-06T01:51:10.684Z</updated>
     
     <content type="html"><![CDATA[<hr><h2 id="title-y有关新软件旧软件相关情况"><a href="#title-y有关新软件旧软件相关情况" class="headerlink" title="title:y有关新软件旧软件相关情况."></a>title:y有关新软件旧软件相关情况.</h2><p>date: 2021-4-21</p><span id="more"></span><p>####### 请注意,部分软件仅供学习使用,下载后于24小时内删除,请勿贩卖,非法盈利是违法行为!后果自负!<br>2021-05-03 14:29:00</p><p>有关q++ ,v++软件不再更新,机器人软件和我新开发的一个神之手还是可以继续维护的,因为这两个软件不涉及到一些法律风险.<br>神之手为一款19年研发的免root加载xposed框架,方便测试人员,开发人员进行极客体验的框架,使用出现软件被篡改导致被封号情况后果自负!这里一切软件都只是为了研究技术使用,不得用于违法,商业用途!<br>否则后果和我一样,我是从19年坐牢坐到了2021 4月才出来,其中的痛没人能感受!我现在还是负债累累</p><h4 id="如果发现有人利用非商业软件进行-贩卖-请截图发给我-qq35062864"><a href="#如果发现有人利用非商业软件进行-贩卖-请截图发给我-qq35062864" class="headerlink" title="如果发现有人利用非商业软件进行 贩卖   请截图发给我 qq35062864"></a>如果发现有人利用非商业软件进行 贩卖   请截图发给我 qq35062864</h4><pre><code>2017-2-21 19:38:23</code></pre><p><a href="http://lojunx.github.io/about">点击这里</a></p><h4 id="如果你经济条件比较好-能够自己养活自己-可以打赏我"><a href="#如果你经济条件比较好-能够自己养活自己-可以打赏我" class="headerlink" title="如果你经济条件比较好,能够自己养活自己 可以打赏我"></a>如果你经济条件比较好,能够自己养活自己 可以打赏我</h4><p><a href="http://lojunx.github.io/about">先打赏再通知我也可以点击这里</a></p><h4 id="想下载我开发的所有个人软件"><a href="#想下载我开发的所有个人软件" class="headerlink" title="想下载我开发的所有个人软件?"></a>想下载我开发的所有个人软件?</h4><p>点击将会进入网盘，包括pc软件和手机软件</p><p><a href="https://lojunx.github.io/update/qq_redpackaget.html">点击进行跳转</a></p><p>##########</p>]]></content>
     
