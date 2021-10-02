@@ -1,0 +1,832 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-26 14:25:42
+ * @LastEditTime: 2021-06-17 10:56:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /www/dtk_static_www_user_center/html/单页html/首页.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.5,maximum-scale=0.5,minimum-scale=0.5,viewport-fit=cover">
+    <meta content="yes" name="apple-mobile-web-app-capable"><meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.12/lib/index.css"/>
+    <script type="text/javascript" src="https://public.ffquan.cn/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vant@2.12/lib/vant.min.js"></script>
+    <script type="text/javascript" src="https://public.ffquan.cn/lib/vue-lazyload.js"></script>
+    <script type="text/javascript" src="https://public.ffquan.cn/lib/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://public.ffquan.cn/lib/taobaoCode/taobaoCode.js?v=1.2.1"></script>
+    <script type="text/javascript" src="https://public.ffquan.cn/lib/clipboard.min.js"></script>
+    <title>线报中心</title>
+    <script>
+        var _config = {
+          appKey: 'axombe',//此处替换成用户appKey
+          //appKey: 'fxjypo',//此处替换成用户appKey
+          // 需要自行接入点击商品后的逻辑 （非必填）
+          // jumpGoodsUrl: function (items) {   // 替换为详细页面的地址或转链逻辑 
+          // window.open('//xxxx&gid=' + items.goodsid);
+          // }
+        }
+    </script>
+<style>
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;-webkit-tap-highlight-color:transparent;-webkit-tap-highlight-color:rgba(0,0,0,0);tap-highlight-color:transparent;box-sizing:border-box}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-family:Arial,PingFang SC,-apple-system,BlinkMacSystemFont,Segoe UI,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}
+
+.myswiper {width: 100%;height: 1rem;background: #f5f5f5}
+
+.myswiper .list {display: inline-block;margin-right: 0!important}
+
+.myswiper .swiper-wrapper,
+.myswiperTwo .swiper-wrapper {white-space: nowrap}
+
+.top-off-layout {
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.top-off-layout .banner {
+  width: 100%;
+  display: block;
+}
+.myswiper {
+  overflow: hidden;
+  background: #fff;
+  font-size: 0;
+}
+.myswiper .list {
+  padding: 0 0.24rem;
+  color: #999;
+  font-size: 0.28rem;
+  line-height: 0.88rem;
+}
+
+.myswiper .list.active {
+  color: #fa6400;
+  font-weight: bold;
+}
+
+.myswiperTwo {
+  height: 1rem;
+  background: #131415;
+  font-size: 0;
+}
+.myswiperTwo > div > div {
+  height: 1rem;
+}
+.myswiperTwo .list {
+  height: 1rem;
+  color: #fff;
+  width: 1.35rem;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.13rem;
+}
+.myswiperTwo .list p {
+  color: #fff;
+  font-size: 0.26rem;
+}
+.myswiperTwo .list span {
+  font-size: 0.22rem;
+  color: #999;
+}
+.myswiperTwo .list span img {
+  width: 0.24rem;
+  top: 0.03rem;
+  position: relative;
+  z-index: 0;
+}
+.myswiperTwo .list.active {
+  background: linear-gradient(180deg, #fd9d00 0%, #fa6400 100%);
+  border-radius: 0.1rem;
+  position: relative;
+  z-index: 0;
+}
+.myswiperTwo .list.active::before {
+  content: '';
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 100%;
+  left: 50%;
+  margin-left: -0.15rem;
+  border-left: 0.15rem solid transparent;
+  border-right: 0.15rem solid transparent;
+  border-top: 0.15rem solid #fa6400;
+}
+.myswiperTwo .list.active span {
+  color: #fff;
+} 
+
+.goodslist {
+  margin: 0;
+  padding-bottom: 0.1rem;
+  display: block;
+  padding-top: 0.24rem;
+  font-size: 0.26rem;
+  padding-bottom:100px;
+}
+.goodslist .list {
+  background: #fff;
+  border-radius: 0.08rem;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 0.24rem;
+  padding: 0.15rem;
+}
+.goodslist .list .pic {
+  width: 1.86rem;
+  height: 1.86rem;
+}
+.goodslist .list .pic img {
+  width: 100%;
+  display: block;
+}
+.goodslist .list .center {
+  width: calc(100% - 1.86rem);
+  text-align: left;
+  margin-left: 0.26rem;
+  position: relative;
+  z-index: 0;
+  padding-top: 0.1rem;
+}
+.goodslist .list .center h4 {
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-all;
+  font-size: 0.26rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #17233d;
+  line-height: 0.37rem;
+  margin-bottom: 0.1rem;
+  height: 0.75rem;
+}
+
+.goodslist .list .center .coupon {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  background: #ff4f4f;
+  color: #fff;
+  padding: 0.02rem;
+  font-size: 0.3rem;
+  border-radius: 0.05rem;
+}
+.goodslist .list .center .coupon span {
+  background: #fff;
+  height: 0.3rem;
+  border-radius: 0.05rem;
+  color: #ff4f4f;
+  font-size: 0.2rem;
+  padding: 0 0.1rem;
+}
+.goodslist .list .center .coupon i {
+  font-size: 0.2rem;
+  padding: 0 0.05rem;
+}
+
+.goodslist .list .center .btns {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goodslist .list .center .btns .ml {
+  line-height: 0.32rem;
+  color: #999;
+  padding-top: 0.05rem;
+}
+
+.goodslist .list .center .btns .ml img {
+  width: 0.32rem;
+}
+.time {
+  display: inline-flex;
+  align-items: center;
+}
+.time::before {
+  content: '';
+  background: url(https://sr.ffquan.cn/dtk_www/20210414/c1r8kaf6vrke67sn1td00.png) no-repeat;
+  background-size: 100% auto;
+  width: 0.32rem;
+  height: 0.32rem;
+  display: inline-block;
+}
+.time i {
+  color: #666;
+  margin-left: 5px;
+}
+
+.goodslist .list .center .btns .go {
+  width: 1.46rem;
+  height: 0.42rem;
+  background: #fa6400;
+  border-radius: 0.21rem;
+  color: #fff;
+  text-align: center;
+}
+
+.share {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 500;
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 13px 0;
+  width: 100%;
+}
+.share a {
+  display: block;
+  background: #fa6400;
+  border-radius: 0.38rem;
+  line-height: 0.76rem;
+  height: 0.76rem;
+  text-align: center;
+  color: #fff;
+  margin: 0 0.12rem;
+  font-size: 0.26rem;
+}
+
+.fixed,.fixedTwo{
+    position: fixed;
+    top:0;
+    left:0;
+    background: #fff;
+    z-index: 999;
+}
+
+.fixedTwo{
+    background: #131415;
+}
+
+.loading{
+    line-height: 1rem; text-align: center; font-size: .3rem; color: #999;
+}
+
+.van-toast{
+    font-size: 30px;
+    min-height:80px;
+}
+.am-modal-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.am-modal-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transform: translateZ(1px);
+    transform: translateZ(1px);
+}
+.am-modal {
+    position: relative;
+}
+.am-modal-transparent {
+    width: 5.4rem;
+}
+.am-modal-content {
+    position: relative;
+    background-color: #fff;
+    border: 0;
+    background-clip: padding-box;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
+.am-modal-transparent .am-modal-content {
+    border-radius: 0.14rem;
+    padding-top: 0.3rem;
+}
+.am-modal-header {
+    padding: 0.12rem 0.3rem 0.3rem;
+}
+.am-modal-title {
+    margin: 0;
+    font-size: 0.36rem;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+}
+.am-modal-body {
+    font-size: 0.3rem;
+    color: #888;
+    height: 100%;
+    line-height: 1.5;
+    overflow: auto;
+}
+.am-modal-transparent .am-modal-content .am-modal-body {
+    padding: 0 0.3rem 0.3rem;
+}
+.am-modal-button-group-h {
+    position: relative;
+    border-top: 1PX solid #ddd;
+    display: -webkit-flex;
+    display: flex;
+}
+.am-modal-button-group-h .am-modal-button {
+    -webkit-touch-callout: none;
+    -webkit-flex: 1 1;
+    flex: 1 1;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #e93b3d;
+    font-size: 0.36rem;
+    height: 1rem;
+    line-height: 1rem;
+    display: block;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.am-modal-button-group-h .am-modal-button:last-child {
+    position: relative;
+    border-left: 1PX solid #ddd;
+}
+[v-cloak] {
+    opacity: 0!important;
+}
+
+.back_home{
+  width: 60px;
+  height:60px;
+  position: fixed;
+  right:0.3rem;
+  bottom:1.2rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back_home img{
+    width: 30px;
+    height:30px;
+}
+.sys{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999999;
+    background: rgba(0, 0, 0, 0.6)
+    url('https://sr.ffquan.cn/dtk_yunying/20210803/c44albf6vrkd4bd59itg0.png')
+    center center no-repeat;
+    background-size: 2.4rem auto;
+}
+</style>
+</head>
+<body>
+<div id="appMain" >
+    <div v-if="sys == null" class="sys"></div>
+     <div class="top-off-layout">
+        <img src="https://sr.ffquan.cn/dtk_www/20210414/c1r4aiv6vrkae65jvbs00.png" class="banner"></img>
+        <block class="wrapBox">
+            <div class="myswiper" :class="{fixed:scrollTop>=230&&active!=3}">
+                <div id="swiperOne" class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                    <div class="swiper-wrapper">
+                        <div 
+                        v-for="(item, index) in shopType" 
+                        :key="index" 
+                        @click="handleChangeOne(index)"  
+                        :class="`swiper-slide list swiper-slide-active ${active == index ? 'active' : ''}`" 
+                        :style="{visibility:item.status == -2 ? 'hidden' : 'visible'}">
+                        {{item}}
+                        </div>
+                    </div>
+               </div>
+            </div>
+            <div class="myswiperTwo" v-show="active===3" :class="{fixedTwo:scrollTop>=430&&active===3}">
+                <div id="swiperTwo" class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-ios">
+                    <div class="swiper-wrapper">
+                      <div
+                        @click="handleChangeTwo(index,item)"
+                        :class="`swiper-slide list swiper-slide-active ${activeTwo == index ? 'active' : ''}`"
+                        v-for="(item, index) in timeList"
+                        :key="index"
+                      >
+                        <p>{{item.label}}</p>
+                        <span>{{item.status===2?'已开抢':(item.status===3?'开抢中':'未开抢')}}<img v-if="item.status===3" src="https://sr.ffquan.cn/dtk_www/20210414/c1r80dn6vrke67sn1tag0.png"></img></span>
+                      </div>
+                   </div>
+               </div>
+            </div>
+        </block>
+        <div class="goodslist" ref="goodslist">
+            <div class="list" v-for="(item, index) in newsList" :key="index">
+                <div class='pic'><img :src="item.mainPic || 'https://sr.ffquan.cn/dtk_www/20210414/c1r8db76vrke67sn1tb00.png'"></img></div>
+                <div class='center'>
+                  <h4>{{item.title}}</h4>
+                  <div class='btns'>
+                    <div class='ml'><img :src="icon[item.type]" /> <span class='time'> 发布于 
+                      <i v-if="item.updateTime">{{item.updateTime | dataFormat}}</i>
+                      <i v-else="item.createTime">{{item.createTime | dataFormat}}</i>
+                    </span></div>
+                    <div class='go' :id="'goodsList' + index + active + activeTwo">去抢购 > </div>
+                  </div>
+                </div>
+            </div>
+            <div class="loading" v-if="status">
+                {{status==='loading'?'加载中...':'没有更多了'}}
+            </div>
+        </div>
+        <div class='share' id="share"><a>立即分享</a></div>
+        <div class="back_home" v-if="scrollTop>=230" @click="back_home">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAwCAYAAAC4wJK5AAACs0lEQVRoQ+3ZTYhOURzH8e9vYWFnqcTGQsnaxmJY2WFD3kkk8pKXRFIGpSkJk5KSlBRjIkqkiNSUUoqNTCmhFClJKfXT0X007pznuc9zn3Onmeme3XNfzvl/7jnn/s+5j5gERZPAwF+E7R3AOmB+hno8jnGLgLfAoKRDIU7ZPgYcGcdBtwrtjqSlAfETmDpBESHsBQFxBtg9QRFPJfU05sRxYAMwcwTmzTiEzcli+gHcBPZL+lrZ28n2UaAHWAj0Sgq/KymVIJq8LAYkrahCkRxh+wRwuEmwlUCSImyfBA4WPO3kkGQI233AgTaHS1JIEoTtU8C+NgGNy5JBukbYPg3s6RCQFNIVwvZZYFcE8BqYlzs+ACyPXNt1j5RG2O4HwsIxX15mPZNfRPYCc6uAlELYPg9sjwBeAGuB6cAoREh4tm+khnSMsH0B2BoBPAfWSBq2HbJ0FBHuSw3pCGH7IrAlAhjKAO+yIFsiUkPaRti+BGyKAJ5lgPeNc0U9MeK6JEOrLYTty8DGCOBJBvg48ly7iFQ9UoiwfQVYHwE8AlZL+pw/1wkiBaQlwvbV8KQjgIcZ4EssyXWK6BbSFGH7GrAqEuSDcFzSt2ZZugyiG0gUYfs6EFv738sA31stM8oiykJGIWzvBM5FgrwLrJQUPiy0LN0gCiDRHWIMcQtYlovydgb4VQRoN08U1dMkIX6SNCN/bwyR3xcMZoDfRQ13mieK6otA+iWNWnDGELOy3dk2IHxh65PkogbL5omiem3vBcIQfyVpSez6wjxR1EiqV2yZdhr31IjUeaJsb9Q9UfdE2bETua8eTvVwqofT/0+gnhP1nKjnxNjMidnAcO5hb5YUvl0lL5VM7Gx3dx9Y/G+5LFXWVmUV256W/XM6BRiS9CF5F2QVVoaoKuAx29mNJSC09QfRuW93lvvKnQAAAABJRU5ErkJggg==" alt="">
+        </div>
+    </div>  
+    
+    <div v-if="isShowAlert" v-cloak>  
+            <div class="am-modal-mask" @click="isShowAlert = false"> 
+                <div class="am-modal-wrap " role="dialog" aria-labelledby="[object Object]">
+                    <div role="document" class="am-modal am-modal-transparent">
+                        <div class="am-modal-content" v-if="isShowAlert">
+                            <div class="am-modal-header">
+                                <div class="am-modal-title">
+                                    <p style="line-height: 50px;" >1、领券 <br>2、复制下单口令并下单 <br>3、查看买返红包</p>
+                                </div>
+                            </div>
+                            <div class="am-modal-body">
+                                <div class="am-modal-alert-content">
+                                    <p>商品有超值买返字样才能领红包<br>（活动随时会结束，下单前需确认）</p>
+                                </div>
+                            </div>
+                            <div class="am-modal-footer">
+                                <div class="am-modal-button-group-h am-modal-button-group-normal" role="group">
+                                    <a class="am-modal-button" role="button">先领券</a>
+                                    <a class="am-modal-button" role="button">再下单</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+      </div>
+</div>
+</body>
+
+</html>
+
+<script>
+    (function(){
+        var size = (document.body.clientWidth || document.documentElement.clientWidth);
+        document.documentElement.style.fontSize = (size > 750 ? 750 : size) / 7.5 + 'px';
+    })();
+
+    // YYY-MM-DD HH:mm:ss
+    function dateFormat (fmt, date) {
+      let ret;
+      const time = typeof date == 'number' ? new Date(date) : new Date(`${date}`.replace(/-/g, '/'));
+      const opt = {
+        'Y+': time.getFullYear().toString(), // 年
+        'M+': (time.getMonth() + 1).toString(), // 月
+        'D+': time.getDate().toString(), // 日
+        'H+': time.getHours().toString(), // 时
+        'm+': time.getMinutes().toString(), // 分
+        's+': time.getSeconds().toString(), // 秒
+       // 有其他格式化字符需求可以继续添加，必须转化成字符串
+      };
+
+     for (let k in opt) {
+       ret = new RegExp('(' + k + ')').exec(fmt);
+       if (ret) {
+        fmt = fmt.replace(ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, '0'));
+       }
+     }
+     return fmt;
+    };
+    
+    // 字典
+    var type = {
+        0:'news',
+        1:'tmcs',
+        2:'czmf',
+        3:'rush',
+        4:'halfPrice',
+        5:'seckill',
+    }
+
+    Vue.use(VueLazyload, {
+        preLoad: 1.3,//
+        error: 'https://sr.ffquan.cn/cms_pic/20200622/bro7s7f6vrkd3jat4ujg0.png',
+        loading: 'https://sr.ffquan.cn/cms_pic/20200612/brhjkf76vrkcrfpi79eg0.png',
+        attempt: 1
+    })
+    new Vue({
+        el: '#appMain',
+        data: {
+            active:0,
+            activeTwo:0,
+            loading:false,
+            newsList:[],
+            shopType:['天猫','猫超','超值买返','整点抢','半价','秒杀'],
+            scrollTop:0,
+            status:'',
+            params:{
+                appKey: _config.appKey,
+                dataType:'news',
+                pageId:1,
+                pageSize:10
+            },
+            timeList:[],
+            kzWebsite:'',
+            sys:{},
+            icon:{
+              'jd':'https://sr.ffquan.cn/dtk_www/20210414/c1r8jkv6vrke67sn1tcg0.png',
+              'tmall':'https://sr.ffquan.cn/dtk_www/20210419/c1ukrbf6vrkephsd2ql00天猫.svg',
+              'tb':'https://p1static.dataoke.com/web/images/tipsection/ico_tb.png',
+              'qiang':'https://p1static.dataoke.com/web/images/tipsection/ico_tb.png',
+              'tmcs':'https://p1static.dataoke.com/web/images/tipsection/ico_tm.png',
+            },
+            isShowAlert:false
+        },
+        methods: {
+            // 回到顶部 
+            back_home(){
+              $(document).scrollTop(0);
+            },
+            // 初始化swiper
+            initSwiper:function(){
+                var swiperConfig = {
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    paginationClickable: true,
+                    observer:true,
+                    observeParents:true,
+                };
+                this.swiperInit = new Swiper(`#swiperOne`,swiperConfig);
+                this.swiperInitTwo = new Swiper(`#swiperTwo`,swiperConfig);
+            },
+            handleChangeOne:function(key,event){
+                this.newsList= []
+                $(document).scrollTop(0); // 滚动归0
+                var _this = this;
+                this.active = key;
+                this.swiperInit.slideTo(key, 600, false);
+                this.params = {
+                    appKey: _config.appKey,
+                    dataType:type[key],
+                    pageId:1,
+                    pageSize:10
+                }
+                this.getGoodsList(this.params)
+            },
+            // 数据获取
+            getGoodsList:function(params){
+                var _this = this;
+                var pageId = params.pageId
+                // 正式 http://bx.ffquan.cn/api/tipOff/informer/data
+                // 测试 http://view.haojiequ.com/api/tipOff/informer/data
+               
+                $.ajax({
+                    url:'https://dtkapi.ffquan.cn/dtk_java_views_api/api/tipOff/informer/data',
+                    type:"get",
+                    data:params,
+                }).done(function(res){
+                    const {code, data, time} = res;
+
+                    if (code != 200) {
+                      _this.sys = null;
+                      return;
+                    }
+
+                    if(!Object.keys(_this.sys).length) {
+                      _this.sys = data && data.sys ? data.sys : null
+                    }
+
+                    var list = data.list
+                    var totalNum = data.totalNum
+                    if(_this.timeList.length===0&&params.dataType==='rush') _this.timeList = data.timeList
+                    if(!_this.kzWebsite) _this.kzWebsite = data.kzWebsite
+
+                    if (pageId === 1) {
+                        _this.newsList = list
+                    } else {
+                        _this.newsList = _this.newsList.concat(list)
+                    }
+                    if (data.totalNum === 0) {
+                        _this.status = 'noData'
+                    } else if (_this.newsList.length >= totalNum) {
+                        _this.status = 'noMore'
+                    }
+                }).error(function(){
+                  _this.sys = null
+                })
+            },
+            handleChangeTwo:function(key,item,event){
+                $(document).scrollTop(0); // 滚动归0
+                var _this = this;
+                this.activeTwo = key;
+                this.swiperInitTwo.slideTo(key, 600, false);
+                this.params.time = item.value
+                this.getGoodsList(this.params)
+            },
+            handleClipboard: function (event,res,isGoods,text){
+               var that = this
+               if(event.getAttribute("isCopy")){
+                  return false;
+                 }
+                event.setAttribute("isCopy",true)
+
+                if(_config.jumpGoodsUrl && res && res.itemId){
+                  $(event).on('click',function(){
+                    _config.jumpGoodsUrl(res);
+                  });
+                }
+                
+                var clipboardImg = new window.ClipboardJS(event, {
+                  text: function(trigger) {
+                    return text || that.handleTwd(res,isGoods);
+                  }
+                });
+                clipboardImg.on('success', function(e) {
+                  vant.Toast(text ? '复制成功，快分享给小伙伴吧~':'口令复制成功，打开手淘抢购');
+                  e.clearSelection();
+                });
+    
+                clipboardImg.on('error', function(e) {  
+                    vant.Toast('口令复制失败，请联系推荐者');
+                });
+            },               
+            handleTwd:function (res,isGoods,isQuan,linQuan,isTaobao) {
+                var _this = this;
+                if(!isTaobao){
+                  isQuan = isQuan || false;
+                  linQuan = linQuan || false;
+                }
+                 // 普通商品转连逻辑
+                if(!window.taobaoCode) return false;
+                var sys = this.sys
+                var resCodeEvent = new window.taobaoCode({
+                type: 1, // type=>1 商品转链  2 活动转链 
+                modelType: 2, // 0 => 默认成功失败提示 modelType => 1 超级红包 2 =>会场弹窗 （判断类型 默认不传，用途复制成功提示文案判断）
+                isRedPacket: false, // isRedPacket => true 开启红包流程  isRedPacket=> 关闭红包流程 （是否开启红包弹窗流程）
+                params: {
+                     ...{
+                      site_id:sys.uid,
+                      pid:sys.pid,
+                      need_tpwd:1,
+                      gid:res.itemId,
+                      goodsid:res.itemId,
+                      is_auto_quan:isQuan?0:1,
+                      pic:res.mainPic || 'https://sr.ffquan.cn/dtk_www/20210414/c1r8db76vrke67sn1tb00.png',
+                      need_item_link:isQuan?0:1,
+                      d_title:res.title,
+                },
+
+                ...(sys.channelId != "" ? { relationId: sys.channelId } : {})
+               }, 
+               //参数 具体参数参照  http://wiki.haojiequ.com/?dir=interface%2F%E5%85%AC%E5%85%B1%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3-go&file=1.index.md
+               regCode: /\#(.*?)\#/, //替换正则 默认 #淘口令#
+               async:false, // 同步还是异步  将不会执行弹窗逻辑需要自己判断 并示例中会返回 （items=>接口专链后地址） 
+               template: `复制本段(#淘口令#)，打开手淘APP领取福利`,//替换模版
+            });
+            
+            if (resCodeEvent.items.code!= 1) {
+                return false;
+            }
+
+            // 券地址
+              if(isQuan  && linQuan){
+                 return  resCodeEvent.items.data.TpwdNew;
+               }
+               // 下单地址
+               if(isQuan  && !linQuan){
+                 return  resCodeEvent.items.data.Link;
+               }
+               // copyFun(event1,res,isGoods,true,false)
+             
+               if(_this.active == 2 && resCodeEvent.items.data.SysQuanInfo!='' && !isQuan && !linQuan && !isTaobao){
+                 _this.showAlert(res,isGoods)
+               }else{
+                 return isGoods ? `${resCodeEvent.items.data.TpwdNew} :/` : `0每天10点，20点抢1元爆品，复制${resCodeEvent.items.data.Tpwd}，打开手淘APP，立即抢购:/`;
+               }
+
+             
+
+            },
+            showAlert:function(res,isGoods){
+              this.isShowAlert = true;
+              setTimeout(() => {
+                const event = document.getElementsByClassName('am-modal-button')[0];
+                const event1 = document.getElementsByClassName('am-modal-button')[1];
+                this.copyFun(event,res,isGoods,true,true)
+                this.copyFun(event1,res,isGoods,false,false,true)
+              }, 100);
+            },
+            copyFun :function(event,res,isGoods,isQuan,linQuan,isTaobao) {
+              var _this = this;
+              const clipboardImg = new window.ClipboardJS(event, {
+                text: (trigger) => {
+                  return  this.handleTwd(res,isGoods,isQuan,linQuan,isTaobao);
+                }
+                });
+              
+                clipboardImg.on('success', function(e) {
+                  vant.Toast(linQuan?'口令复制成功，打开手淘领券':'口令复制成功，打开手淘抢购')
+                  e.clearSelection();
+                  _this.isShowAlert = false;
+                });
+              
+                clipboardImg.on('error', function(e) {  
+                  vant.Toast('口令复制失败，请联系推荐者')
+                  _this.isShowAlert = false;
+                });
+              
+            },
+        },
+     
+        mounted: function () {
+            var that = this
+            this.initSwiper()
+            this.getGoodsList(this.params);
+            window.onscroll = function() {
+              that.scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            }
+            // 监听触底
+            window.addEventListener('scroll',function(){
+                var h = window.innerHeight;
+                var bottom = that.$refs.goodslist.getBoundingClientRect().bottom;
+                if (bottom -h < 1) {
+                    that.params.pageId = that.params.pageId + 1
+                    that.getGoodsList(that.params);
+                }
+            })
+        },
+        filters:{
+            dataFormat:function(val){
+                return  dateFormat('MM-DD HH:mm',val)
+            }
+        },
+        watch:{
+            kzWebsite:function(newVal){
+               if(newVal){
+                   var that =this
+                   $.ajax({
+                      url:'https://dtkapi.ffquan.cn/taobaoapi/kz-create-short',
+                      type:"get",
+                      data:{
+                        url:`${newVal}#/tipOff?app_key=${_config.appKey}`
+                      },
+                  }).done(function(res){
+                    that.$nextTick(function(){
+                      that.handleClipboard(document.getElementById(`share`),{},false,'全网最新优惠信息，小伙伴们快来褥羊毛吧~ ' + res.data)
+                    }) 
+                  })
+               }
+            },
+            newsList:{
+                deep:true,
+                handler:function(newVal){
+                    if(newVal){
+                        var that= this 
+                        for (let index = 0; index < newVal.length; index++) {
+                           this.$nextTick(function(){
+                            that.handleClipboard(document.getElementById('goodsList'+index+this.active+this.activeTwo),newVal[index],true)
+                           })
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
